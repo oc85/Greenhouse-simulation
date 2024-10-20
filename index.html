@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Greenhouse System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="controls">
+            <h2>Smart Greenhouse System</h2>
+            
+            <div class="selector">
+                <select id="cropSelect">
+                    <option value="strawberry">Strawberry</option>
+                    <option value="tomatoes">Tomatoes</option>
+                </select>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Temperature:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="temperature">21.11</span>
+                    <span class="parameter-unit">°C</span>
+                </div>
+                <div class="parameter-buttons">
+                    <button class="decrease">-</button>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Light Intensity:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="lightIntensity">55.00</span>
+                    <span class="parameter-unit">%</span>
+                </div>
+                <div class="parameter-buttons">
+                    <button class="decrease">-</button>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Moisture:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="moisture">43.30</span>
+                    <span class="parameter-unit">%</span>
+                </div>
+                <div class="parameter-buttons">
+                    <button class="decrease">-</button>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Humidity:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="humidity">60.00</span>
+                    <span class="parameter-unit">%</span>
+                </div>
+                <div class="parameter-buttons">
+                    <button class="decrease">-</button>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Window:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="window">Closed</span>
+                </div>
+                <button class="toggle">Toggle</button>
+            </div>
+
+            <div class="parameter">
+                <span class="parameter-name">Fan:</span>
+                <div class="parameter-value-container">
+                    <span class="parameter-value" id="fan">Off</span>
+                </div>
+                <button class="toggle">Toggle</button>
+            </div>
+
+            <div id="predictedDays">Predicted Days: 0</div>
+
+            <button id="startBtn">Start Simulation</button>
+            <button id="stopBtn">Stop Simulation</button>
+        </div>
+
+        <div id="simulation">
+            <div id="imageContainer">
+                <img src="main.png" alt="Plant" id="plantImage">
+            </div>
+
+            <div id="growthStatus">Crop Growth: 0.00%</div>
+            <div id="dayCount">Day: 0</div>
+
+            <div class="dynamic-parameter">
+                <span>Temperature: <span id="dynamicTemperature">21.11</span> °C</span>
+                <div class="indicator-buttons">
+                    <button id="tempLow" class="indicator">Low</button>
+                    <button id="tempHigh" class="indicator">High</button>
+                </div>
+            </div>
+
+            <div class="dynamic-parameter">
+                <span>Moisture: <span id="dynamicMoisture">43.30</span> %</span>
+                <div class="indicator-buttons">
+                    <button id="moistLow" class="indicator">Low</button>
+                    <button id="moistHigh" class="indicator">High</button>
+                </div>
+            </div>
+
+            <div class="dynamic-parameter">
+                <span>Humidity: <span id="dynamicHumidity">60.00</span> %</span>
+                <div class="indicator-buttons">
+                    <button id="humidLow" class="indicator">Low</button>
+                    <button id="humidHigh" class="indicator">High</button>
+                </div>
+            </div>
+
+            <div class="dynamic-parameter">
+                <span>Light Level: <span id="dynamicLightLevel">55.00</span> %</span>
+                <div class="indicator-buttons">
+                    <button id="lightLow" class="indicator">Low</button>
+                    <button id="lightHigh" class="indicator">High</button>
+                </div>
+            </div>
+            <div class="actuator-controls">
+                <div class="actuator">
+                    Heater: <span id="heaterStatus" class="actuator-status">Off</span>
+                </div>
+                <div class="actuator">
+                    Cooler: <span id="coolerStatus" class="actuator-status">Off</span>
+                </div>
+                <div class="actuator">
+                    Humidifier: <span id="humidifierStatus" class="actuator-status">Off</span>
+                </div>
+                <div class="actuator">
+                    Dehumidifier: <span id="dehumidifierStatus" class="actuator-status">Off</span>
+                </div>
+                <div class="actuator">
+                    Irrigation: <span id="irrigationStatus" class="actuator-status">Off</span>
+                </div>
+                <div class="actuator">
+                    Lights: <span id="lightsStatus" class="actuator-status">Off</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
